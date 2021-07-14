@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.3'
 
 services:
   mc:
@@ -17,5 +17,6 @@ services:
       ALLOW_FLIGHT: "true"
     ports:
       - 25565:25565
+      - 25575:25575
     volumes:
       - "~/minecraft-server/server:/data"
