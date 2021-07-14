@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  mc:
+    container_name: "mcfabric"
+    image: itzg/minecraft-server
+    environment:
+      EULA: "true"
+      TYPE: FABRIC
+      VERSION: 1.17.1
+      ONLINE_MODE: "false"
+      MEMORY: 2500m
+      TZ: Europe/Madrid 
+      DIFFICULTY: hard
+      VIEW_DISTANCE: 14
+      MOTD: "JulenPark"
+      ALLOW_FLIGHT: "true"
+    ports:
+      - 25565:25565
+    volumes:
+      - "~/minecraft-server/server:/data"

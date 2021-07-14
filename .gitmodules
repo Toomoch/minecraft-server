@@ -1,0 +1,3 @@
+[submodule "minecraft-backup"]
+	path = minecraft-backup
+	url = https://github.com/nicolaschan/minecraft-backup
