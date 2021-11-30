@@ -7,9 +7,9 @@ services:
     environment:
       EULA: "true"
       TYPE: FABRIC
-      VERSION: 1.17.1
+      VERSION: 1.18
       ONLINE_MODE: "false"
-      MEMORY: 2500m
+      MEMORY: 3500m
       TZ: Europe/Madrid 
       DIFFICULTY: hard
       VIEW_DISTANCE: 14
