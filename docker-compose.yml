@@ -7,16 +7,16 @@ services:
     environment:
       EULA: "true"
       TYPE: FABRIC
-      VERSION: 1.18
+      VERSION: 1.18.1
       ONLINE_MODE: "false"
-      MEMORY: 3500m
+      MEMORY: 2300m
       TZ: Europe/Madrid 
       DIFFICULTY: hard
       VIEW_DISTANCE: 14
       MOTD: "Fabric server"
       ALLOW_FLIGHT: "true"
     ports:
-      - 25565:25565
-      - 25575:25575
+      - 25566:25565
+      - 25576:25575
     volumes:
-      - "~/minecraft-server/server:/data"
+      - "./server:/data"
