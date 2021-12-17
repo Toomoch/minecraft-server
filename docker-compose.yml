@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   mc:
-    container_name: "mcfabric"
+    container_name: "jmcfabric"
     image: itzg/minecraft-server
     environment:
       EULA: "true"
@@ -16,7 +16,7 @@ services:
       MOTD: "Fabric server"
       ALLOW_FLIGHT: "true"
     ports:
-      - 25565:25565
-      - 25575:25575
+      - 25566:25565
+      - 25576:25575
     volumes:
       - "./server:/data"
