@@ -20,3 +20,27 @@ services:
       - 25576:25575
     volumes:
       - "./server:/data"
+
+  backup:
+    image: itzg/mc-backup
+    environment:
+      RCON_HOST: mc
+      BACKUP_METHOD: restic
+      RESTIC_PASSWORD: password
+      RESTIC_REPOSITORY: rclone:drive:minecraft
+    volumes:
+      # mount volume pre-configured using a host mounted file
+      - ./rclone.conf:/config/rclone/rclone.conf
+      # or configure one into a named volume using
+      # docker run -it --rm -v rclone-config:/config/rclone rclone/rclone config
+      # and change the above to
+      # - rclone-config:/config/rclone
+      - mc:/data:ro
+      - backups:/backup
+
+volumes:
+# Uncomment this if using the config step above
+#  rclone-config:
+#    external: true
+  mc: {}
+  backups: {}
