@@ -29,8 +29,8 @@ services:
       BACKUP_METHOD: restic
       RESTIC_PASSWORD: password
       RESTIC_REPOSITORY: rclone:drive:minecraft
-      RCON_PORT: 25576
-      SERVER_PORT: 25566
+      #RCON_PORT: 25576
+      #SERVER_PORT: 25566
     volumes:
       # mount volume pre-configured using a host mounted file
       - ./rclone.conf:/config/rclone/rclone.conf
