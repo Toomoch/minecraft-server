@@ -22,12 +22,15 @@ services:
       - "./server:/data"
 
   backup:
+    container_name: "jmcbackup"
     image: itzg/mc-backup
     environment:
       RCON_HOST: mc
       BACKUP_METHOD: restic
       RESTIC_PASSWORD: password
       RESTIC_REPOSITORY: rclone:drive:minecraft
+      RCON_PORT: 25576
+      SERVER_PORT: 25566
     volumes:
       # mount volume pre-configured using a host mounted file
       - ./rclone.conf:/config/rclone/rclone.conf
