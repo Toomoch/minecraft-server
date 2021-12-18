@@ -26,9 +26,10 @@ services:
     image: itzg/mc-backup
     environment:
       RCON_HOST: mc
-      BACKUP_METHOD: restic
-      RESTIC_PASSWORD: password
-      RESTIC_REPOSITORY: rclone:drive:minecraft
+      BACKUP_METHOD: tar
+      DEST_DIR: /backups
+      #RESTIC_PASSWORD: password
+      #RESTIC_REPOSITORY: rclone:drive:minecraft
       #RCON_PORT: 25576
       #SERVER_PORT: 25566
     volumes:
@@ -39,7 +40,7 @@ services:
       # and change the above to
       # - rclone-config:/config/rclone
       - mc:/data:ro
-      - backups:/backup
+      - "./backups:/backup"
     network_mode: "service:mc"
 
 volumes:
